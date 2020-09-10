@@ -20,7 +20,7 @@ avo$largeHass<-avo$X4225
 avo$xlHass<-avo$X4770
 avo<-avo[-(4:6)] #remove old column names
 ```
-So we are left with a dataset with 18,249 observations and 13 columns!
+So we are left with a dataset with **18,249 observations and 13 columns!**
 
 Lets format the date column correctly and put it into ascending order. This will make subsetting the data easier later.
 
@@ -33,4 +33,21 @@ We see that this dataset includes two types of avocados. **I'm hoping to underst
 levels(avo$type)
 [1] "conventional" "organic"  
 ```
+
+Upon first glance, we see conventional avocados accounting for 97.2% of sales, while organic avocados account for only 2.8%
+```
+avo %>% 
+  group_by(type) %>% 
+  summarise(Average_Volume=mean(Total.Volume)) %>%
+  mutate(Percent=prop.table(Average_Volume)*100)
+```
+| type  | Average_Volume | Percent |
+| ------------- | ------------- |-------------|
+| conventional  | 1,653,213  | 97.2%
+| organic | 47,811 | 2.81% |
+
+type         Average_Volume Percent
+  <fct>                 <dbl>   <dbl>
+1 conventional       1653213.   97.2 
+2 organic              47811.    2.81
 
