@@ -72,13 +72,19 @@ We see average price has fluctuated dramatically over the last 3 years. For conv
 
 ### Analyzing Seasonal Patterns:
 In this section, I want to try and detect any reoccuring seasonality patterns. Are there any easily identifiable repeating trends? 
+
 **We can easily observe that starting in May, avocado prices increase dramatically, but why?**
 - American avocados take no longer than eight months to move from blooms to harvest. The blooming season begins in February or March, so mature avocados are ready for picking between May and September.
 - In the summer months, demand rises for avocados as people consume more
 
-**Supply and demand tend to have an inverse relationship, and as supply rises we can expect to see increased prices. How can we explain a rise in price if supply and demand are both rising at the same time?**
+**Supply and demand tend to have an inverse relationship, and as supply rises in the summer we can expect to see increased prices. How can we explain a rise in price if supply and demand are both rising at the same time?**
+
+- The answer to that question (according to a 2017 npr article), is that in 2017 California and Mexico experienced an intense heatwave in summer 2017 which wiped out a significant percentage of avocado crops!
 
 ![](images/seasonality_.jpeg)
+
+
+![](images/scaled_timeseries.jpeg)
 
 ![](images/arima_conv_forecast.jpeg)
 
