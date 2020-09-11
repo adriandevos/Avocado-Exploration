@@ -60,7 +60,6 @@ We can conclude that organic avocados are way more expensive than conventional a
 
 ![](images/time_series1.jpeg) ![](images/barplot_.jpeg)
 
-**Scaled Time Series
 
 ![](images/scaled_timeseries.jpeg)
 
@@ -75,29 +74,26 @@ We see average price has fluctuated dramatically over the last 3 years. However 
 2. Rising population
 
 ### Regional patterns
-The data allow us to subset data by region, giving us a great insight as to how demand and price differs across regions of the US 
-
-We have 7 different regions in our data:
+We have 7 different regions in our data, giving us a great insight as to how demand and price differs across regions of the US 
 ```
 c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatLakes")
 ```
 
-
+#### Visualizations 
 
 ![](images/regional_volume_boxplot.jpeg)
 ![](images/regional_price_boxplot.jpeg)
 
 ![](images/regional_averageprice.jpeg)
 
-
 ![](images/regional_volume.jpeg)
 
+#### Summary
 - We can quickly observe that organic avocado supply and sales are dramatically lower than conventional sales, but price is only slightly higher.
-
 - West and South Central lead the way in volume for both conventional and organic avocados, while Plains and Mid-South are clearly at the bottom. This probably has to do with proximity to Mexico, and the specific regions in which avocados grow.
 - West and South Central overall have the lowest priced avocados, probably due to their inceased supply on the west coast. Los Angeles shows the largest supply of both conventional and organic avocados. Contrary to this, San Francisco has the highest priced conventional and organic avocados, due to having a high cost of living.
 - Avocados are popular everywhere, but much more popular on the west coast. 
--
+
 
 
 ### Analyzing Seasonal Patterns:
@@ -113,6 +109,13 @@ In this section, I want to try and detect any reoccuring seasonality patterns. A
 
 ![](images/seasonality_.jpeg)
 
+## Forecast
+
+ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average' is actually a class of models that 'explains' a given time series based on its own past values, that is, its own lags and the lagged forecast errors, so that equation can be used to forecast future values. 
+
+- We can observe that 2018-2020 will continue to show seasonality trends.
+- Avocado prices will most likely continue to rise as demand grows higher every year. 
+- 2020 shows potential for some extreme peaks in price, up to $3 per avocado
 
 ![](images/arima_conv_forecast.jpeg)
 
