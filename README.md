@@ -60,8 +60,12 @@ We can conclude that organic avocados are way more expensive than conventional a
 
 ![](images/time_series1.jpeg) ![](images/barplot_.jpeg)
 
+**Scaled Time Series
 
-We see average price has fluctuated dramatically over the last 3 years. For conventional avocadods average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year. 
+![](images/scaled_timeseries.jpeg)
+
+
+We see average price has fluctuated dramatically over the last 3 years. However it's important to observe the avocado prices are rising continuously over time, probably due to increasing demand. For conventional avocadods average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year.
 
 **Conventional Avocados:** Conventional Avocado sales continuously rose from 2015-2016, but took a significant dip in mid-2017. Avocado supply was famously limited in 2017, which would explain why fewer avocados were sold.
 
@@ -69,6 +73,32 @@ We see average price has fluctuated dramatically over the last 3 years. For conv
 
 1. Greater demand for organic avocados as farming and access to organic agriculture grows worldwide. 
 2. Rising population
+
+### Regional patterns
+The data allow us to subset data by region, giving us a great insight as to how demand and price differs across regions of the US 
+
+We have 7 different regions in our data:
+```
+c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatLakes")
+```
+
+
+
+![](images/regional_volume_boxplot.jpeg)
+![](images/regional_price_boxplot.jpeg)
+
+![](images/regional_averageprice.jpeg)
+
+
+![](images/regional_volume.jpeg)
+
+- We can quickly observe that organic avocado supply and sales are dramatically lower than conventional sales, but price is only slightly higher.
+
+- West and South Central lead the way in volume for both conventional and organic avocados, while Plains and Mid-South are clearly at the bottom. This probably has to do with proximity to Mexico, and the specific regions in which avocados grow.
+- West and South Central overall have the lowest priced avocados, probably due to their inceased supply on the west coast. Los Angeles shows the largest supply of both conventional and organic avocados. Contrary to this, San Francisco has the highest priced conventional and organic avocados, due to having a high cost of living.
+- Avocados are popular everywhere, but much more popular on the west coast. 
+-
+
 
 ### Analyzing Seasonal Patterns:
 In this section, I want to try and detect any reoccuring seasonality patterns. Are there any easily identifiable repeating trends? 
@@ -84,9 +114,7 @@ In this section, I want to try and detect any reoccuring seasonality patterns. A
 ![](images/seasonality_.jpeg)
 
 
-![](images/scaled_timeseries.jpeg)
-
 ![](images/arima_conv_forecast.jpeg)
 
 
-![](images/Regional_TimeSeries.jpeg)
+
