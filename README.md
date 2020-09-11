@@ -31,7 +31,8 @@ avo<-avo[order(as.Date(avo$Date, format="%Y-%m-%d")),]
 ```
 ### Exploration
 We see that this dataset includes two types of avocados. 
-**I'm hoping to understand how conventional and organic avocados differ in price and volume of sales, and also how seasonality & supply affects price and sales. **
+
+**I'm hoping to understand how conventional and organic avocados differ in price and volume of sales, and also how seasonality & supply affects price and sales.**
 ```
 levels(avo$type)
 [1] "conventional" "organic"  
@@ -61,6 +62,12 @@ We can conclude that organic avocados are way more expensive than conventional a
 
 We see average price has fluctuated dramatically over the last 3 years. For conventional avocadods average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year. 
 
-Conventional Avocado sales continuously rose from 2015-2016, but took a significant dip in mid-2017.
+**Conventional Avocados:** Conventional Avocado sales continuously rose from 2015-2016, but took a significant dip in mid-2017. Avocado supply was famously limited in 2017, which would explain why fewer avocados were sold.
+
+**Organic Avocados:** Organic avocado sales continuously rose for the full time span, and are approaching an exponential curve. I believe these rising sales occur for two reasons: 
+
+1. Greater demand for organic avocados as farming and access to organic agriculture grows worldwide. 
+2. Rising population
+
 I will definitely investigate these trends later on.
 
