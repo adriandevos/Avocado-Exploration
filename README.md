@@ -111,13 +111,21 @@ In this section, I want to try and detect any reoccuring seasonality patterns. A
 
 ## Forecast
 
-ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average' is actually a class of models that 'explains' a given time series based on its own past values, that is, its own lags and the lagged forecast errors, so that equation can be used to forecast future values. 
-
+ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average'.It's a model that 'explains' a given time series based on its own past values (lags), so that equation can be used to forecast future values. 
+#### Conventional Avocados
 - We can observe that 2018-2020 will continue to show seasonality trends.
-- Avocado prices will most likely continue to rise as demand grows higher every year. 
-- 2020 shows potential for some extreme peaks in price, up to $3 per avocado
+- Conventional avocado prices will most likely continue to rise in the near future as demand grows higher
+- 2020 shows potential for a significant drop in the price of conventional avocados, possibly reaching an all time low.
+- I would predict another rises in prices after a low in 2020
 
 ![](images/arima_conv_forecast.jpeg)
 
+#### Organic Avocados
+- We can observe that 2018-2020 will continue to show seasonality trends.
+- Organic avocado prices will most likely continue to rise in the near future as demand grows higher
+- Interestingly, we see organic avocados forecasting a significant drop in price, with little fluctuation in price.
+- Organic avocados possibly will drop below $1 in 2020
+
+![](images/organic_forecast.jpeg)
 
 
