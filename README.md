@@ -128,4 +128,14 @@ ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average'.It's 
 
 ![](images/organic_forecast.jpeg)
 
+## Conclusion:
+We can observe several important results from our analysis of this dataset:
+
+**Organic Avocados Are Expensive:** As expected, we have noticed that organic avocados are much more expensive than conventional avocados. Most patterns are similar between the two types of avocados.
+
+**Year 2017:** 2017 was the most volatile year for avocados, but a good year to be selling avocados on account of the shortage. The extreme heatwaves in the summer of 2017, contributed to a shortage of avocados, and the supply tanked. Demand quickly rose during the summer, and prices surged to all time highs.
+
+**Buy avocados before fall!:** Avocado prices are clearly highest during the fall, and lowest in the winter. I believe this is due to the high consumpiton of avocados in the summer, and the supply dropping continously as a result.
+
+**Downward trend in the longrun:** Based on our ARIMA model, we expect avocados to rise in price for a couple years, and then move to a downard trend shortly after 2020.
 
