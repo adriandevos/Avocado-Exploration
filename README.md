@@ -6,7 +6,7 @@ The table below represents weekly 2018 retail scan data for National retail volu
 
 ## Data Exploration 
 ### Data Clean-Up 
-Upon first glance, we see that the region column has 3 distinct location types: Region, State, City/Area. It's impossible to understand exactly how state and city/area overlap with Region, so I will just analyze each location type seperately to avoid overlap. We have data from all of 2015-2017, but only until March 2018. This will be a great opportunity to forecast for the rest of the year.
+Upon first glance, we see that the region column has 3 distinct location types: Region, State, City/Area. It's impossible to understand exactly how state and city/area overlap with Region, so I will just analyze each location type separtately to avoid overlap. We have data from all of 2015-2017, but only until March 2018. This will be a great opportunity to forecast for the rest of the year.
 
 The first column in the dataset is just a count of the observations so I will eliminate it.
 ```
@@ -22,7 +22,7 @@ avo<-avo[-(4:6)] #remove old column names
 ```
 So we are left with a dataset with **18,249 observations and 13 columns!**
 
-Lets format the date column correctly and put it into ascending order. This will make subsetting the data easier later.
+Lets format the date column correctly and put it into ascending order. This will make sub setting the data easier later.
 
 ```
 avo$Date <- as.Date(avo$Date, "%Y-%m-%d")
@@ -64,7 +64,7 @@ We can conclude that organic avocados are way more expensive than conventional a
 ![](images/scaled_timeseries.jpeg)
 
 
-We see average price has fluctuated dramatically over the last 3 years. However it's important to observe the avocado prices are rising continuously over time, probably due to increasing demand. For conventional avocadods average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year.
+We see average price has fluctuated dramatically over the last 3 years. However it's important to observe the avocado prices are rising continuously over time, probably due to increasing demand. For conventional avocados average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year.
 
 **Conventional Avocados:** Conventional Avocado sales continuously rose from 2015-2016, but took a significant dip in mid-2017. Avocado supply was famously limited in 2017, which would explain why fewer avocados were sold.
 
@@ -91,13 +91,13 @@ c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatL
 #### Summary
 - We can quickly observe that organic avocado supply and sales are dramatically lower than conventional sales, but price is only slightly higher.
 - West and South Central lead the way in volume for both conventional and organic avocados, while Plains and Mid-South are clearly at the bottom. This probably has to do with proximity to Mexico, and the specific regions in which avocados grow.
-- West and South Central overall have the lowest priced avocados, probably due to their inceased supply on the west coast. Los Angeles shows the largest supply of both conventional and organic avocados. Contrary to this, San Francisco has the highest priced conventional and organic avocados, due to having a high cost of living.
+- West and South Central overall have the lowest priced avocados, probably due to their increased supply on the west coast. Los Angeles shows the largest supply of both conventional and organic avocados. Contrary to this, San Francisco has the highest priced conventional and organic avocados, due to having a high cost of living.
 - Avocados are popular everywhere, but much more popular on the west coast. 
 
 
 
 ### Analyzing Seasonal Patterns:
-In this section, I want to try and detect any reoccuring seasonality patterns. Are there any easily identifiable repeating trends? 
+In this section, I want to try and detect any reoccurring seasonality patterns. Are there any easily identifiable repeating trends? 
 
 **We can easily observe that starting in May, avocado prices increase dramatically, but why?**
 - American avocados take no longer than eight months to move from blooms to harvest. The blooming season begins in February or March, so mature avocados are ready for picking between May and September.
@@ -105,13 +105,13 @@ In this section, I want to try and detect any reoccuring seasonality patterns. A
 
 **Supply and demand tend to have an inverse relationship, and as supply rises in the summer we can expect to see increased prices. How can we explain a rise in price if supply and demand are both rising at the same time?**
 
-- The answer to that question (according to a 2017 npr article), is that in 2017 California and Mexico experienced an intense heatwave in summer 2017 which wiped out a significant percentage of avocado crops!
+- The answer to that question (according to a 2017 npr article), is that in 2017 California and Mexico experienced an intense heat wave in summer 2017 which wiped out a significant percentage of avocado crops!
 
 ![](images/seasonality_.jpeg)
 
 ## Forecast
 
-ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average'.It's a model that 'explains' a given time series based on its own past values (lags), so that equation can be used to forecast future values. 
+ARIMA forecasting is short for 'Auto Regressive Integrated Moving Average'. It's a model that 'explains' a given time series based on its own past values (lags), so that equation can be used to forecast future values. 
 #### Conventional Avocados
 - We can observe that 2018-2020 will continue to show seasonality trends.
 - Conventional avocado prices will most likely continue to rise in the near future as demand grows higher
@@ -133,9 +133,10 @@ We can observe several important results from our analysis of this dataset:
 
 **Organic Avocados Are Expensive:** As expected, we have noticed that organic avocados are much more expensive than conventional avocados. Most patterns are similar between the two types of avocados.
 
-**Year 2017:** 2017 was the most volatile year for avocados, but a good year to be selling avocados on account of the shortage. The extreme heatwaves in the summer of 2017, contributed to a shortage of avocados, and the supply tanked. Demand quickly rose during the summer, and prices surged to all time highs.
+**Year 2017:** 2017 was the most volatile year for avocados, but a good year to be selling avocados on account of the shortage. The extreme heat waves in the summer of 2017, contributed to a shortage of avocados, and the supply tanked. Demand quickly rose during the summer, and prices surged to all time highs.
 
-**Buy avocados before fall!:** Avocado prices are clearly highest during the fall, and lowest in the winter. I believe this is due to the high consumpiton of avocados in the summer, and the supply dropping continously as a result.
+**Buy avocados before fall!:** Avocado prices are clearly highest during the fall, and lowest in the winter. I believe this is due to the high consumption of avocados in the summer, and the supply dropping continuously as a result.
 
-**Downward trend in the longrun:** Based on our ARIMA model, we expect avocados to rise in price for a couple years, and then move to a downard trend shortly after 2020.
+**Downward trend in the long run:** Based on our ARIMA model, we expect avocados to rise in price for a couple years, and then move to a downward trend shortly after 2020.
+
 
