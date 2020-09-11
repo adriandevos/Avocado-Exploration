@@ -41,13 +41,9 @@ avo %>%
   summarise(Average_Volume=mean(Total.Volume)) %>%
   mutate(Percent=prop.table(Average_Volume)*100)
 ```
-| type  | Average_Volume | Percent |
-| ------------- | ------------- |-------------|
-| conventional  | 1,653,213  | 97.2%
-| organic | 47,811 | 2.81% |
 
-type         Average_Volume Percent
-  <fct>                 <dbl>   <dbl>
-1 conventional       1653213.   97.2 
-2 organic              47811.    2.81
-
+| Type         | Average Volume | Average Price |   
+|--------------|----------------|---------------|
+| Conventional | 1,653,213      | 97.2%         |  
+| organic      | 47,811         | 2.81%         |  
+                                           
