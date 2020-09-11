@@ -6,8 +6,7 @@ The table below represents weekly 2018 retail scan data for National retail volu
 
 ## Data Exploration 
 ### Data Clean-Up 
-Upon first glance, we see that the region column has 3 distinct location types: Region, State, City/Area. 
-It's impossible to understand exactly how state and city/area overlap with Region, so I will just analyze each location type seperately to avoid overlap.
+Upon first glance, we see that the region column has 3 distinct location types: Region, State, City/Area. It's impossible to understand exactly how state and city/area overlap with Region, so I will just analyze each location type seperately to avoid overlap. We have data from all of 2015-2017, but only until March 2018. This will be a great opportunity to forecast for the rest of the year.
 
 The first column in the dataset is just a count of the observations so I will eliminate it.
 ```
@@ -47,18 +46,20 @@ Upon first glance, we see conventional avocados accounting for 97.2% of sales, w
                                            
 ![](images/distribution.jpeg)
 
+![](images/yearly_distribution.jpeg)
+
+
+We can conclude that organic avocados are way more expensive than conventional avocados. Average price of organic avocados is **35% higher**.
 
 | Type         | Average Price  | 
 |--------------|----------------|
 | Conventional | $1.16          | 
 | organic      | $1.65          | 
 
-We can conclude that organic avocados are way more expensive than conventional avocados. Average price of organic avocados is **35% higher**.
-
-
 
 
 ![](images/time_series1.jpeg) ![](images/barplot_.jpeg)
+
 
 We see average price has fluctuated dramatically over the last 3 years. For conventional avocadods average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year. 
 
@@ -69,5 +70,17 @@ We see average price has fluctuated dramatically over the last 3 years. For conv
 1. Greater demand for organic avocados as farming and access to organic agriculture grows worldwide. 
 2. Rising population
 
-I will definitely investigate these trends later on.
+### Analyzing Seasonal Patterns:
+In this section, I want to try and detect any reoccuring seasonality patterns. Are there any easily identifiable repeating trends? 
+**We can easily observe that starting in May, avocado prices increase dramatically, but why?**
+- American avocados take no longer than eight months to move from blooms to harvest. The blooming season begins in February or March, so mature avocados are ready for picking between May and September.
+- In the summer months, demand rises for avocados as people consume more
 
+**Supply and demand tend to have an inverse relationship, and as supply rises we can expect to see increased prices. How can we explain a rise in price if supply and demand are both rising at the same time?**
+
+![](images/seasonality_.jpeg)
+
+![](images/arima_conv_forecast.jpeg)
+
+
+![](images/Regional_TimeSeries.jpeg)
