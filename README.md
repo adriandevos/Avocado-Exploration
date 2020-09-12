@@ -1,10 +1,13 @@
 # :avocado: Avocado Prices: Analyzing Seasonality and Pattern Trends :avocado:
-Data dive into avocado sales trends
+
+**I'm hoping to understand how conventional and organic avocados differ in price and volume of sales, and also how seasonality & supply affects price and sales.**
+## Data Exploration 
+
+### The Data
 *From the Hass Avocado Board website*
 
 The table below represents weekly 2018 retail scan data for National retail volume (units) and price. Retail scan data comes directly from retailers’ cash registers based on actual retail sales of Hass avocados. Starting in 2013, the table below reflects an expanded, multi-outlet retail data set. Multi-outlet reporting includes an aggregation of the following channels: grocery, mass, club, drug, dollar and military. The Average Price (of avocados) in the table reflects a per unit (per avocado) cost, even when multiple units (avocados) are sold in bags. The Product Lookup codes (PLU’s) in the table are only for Hass avocados. Other varieties of avocados (e.g. greenskins) are not included in this table.
 
-## Data Exploration 
 ### Data Clean-Up 
 Upon first glance, we see that the region column has 3 distinct location types: Region, State, City/Area. It's impossible to understand exactly how state and city/area overlap with Region, so I will just analyze each location type separtately to avoid overlap. We have data from all of 2015-2017, but only until March 2018. This will be a great opportunity to forecast for the rest of the year.
 
@@ -30,13 +33,10 @@ avo<-avo[order(as.Date(avo$Date, format="%Y-%m-%d")),]
 ```
 ### Exploration
 We see that this dataset includes two types of avocados. 
-
-**I'm hoping to understand how conventional and organic avocados differ in price and volume of sales, and also how seasonality & supply affects price and sales.**
 ```
 levels(avo$type)
 [1] "conventional" "organic"  
 ```
-
 Upon first glance, we see conventional avocados accounting for 97.2% of sales, while organic avocados account for only 2.8%
 
 | Type         | Average Volume | Percent       |     
@@ -63,8 +63,10 @@ We can conclude that organic avocados are way more expensive than conventional a
 
 ![](images/scaled_timeseries.jpeg)
 
-
-We see average price has fluctuated dramatically over the last 3 years. However it's important to observe the avocado prices are rising continuously over time, probably due to increasing demand. For conventional avocados average price fluctuated the most in 2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year.
+- Over time we see conventional and organic avocado sales and prices rising quickly with a slight dip in volume of conventional avocados in 2017.
+- We see average price has fluctuated dramatically over the last 3 years. However it's important to observe the avocado prices are rising continuously over time, probably due to increasing demand. 
+- For conventional avocados, average price fluctuated the most in 2016/2017, with average prices dipping below .$50 early in the year, but peaking above $1.70 towards the end of the year.
+- For organic avocados, average price dipped the lowest in 2016 to around $1.40, and peaked around $2.25 in late 2017.
 
 **Conventional Avocados:** Conventional Avocado sales continuously rose from 2015-2016, but took a significant dip in mid-2017. Avocado supply was famously limited in 2017, which would explain why fewer avocados were sold.
 
@@ -81,9 +83,6 @@ c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatL
 
 #### Visualizations 
 
-![](images/regional_volume_boxplot.jpeg)
-![](images/regional_price_boxplot.jpeg)
-
 ![](images/regional_averageprice.jpeg)
 
 ![](images/regional_volume.jpeg)
@@ -95,6 +94,8 @@ c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatL
 - Avocados are popular everywhere, but much more popular on the west coast. 
 
 
+![](images/regional_volume_boxplot.jpeg)
+![](images/regional_price_boxplot.jpeg)
 
 ### Analyzing Seasonal Patterns:
 In this section, I want to try and detect any reoccurring seasonality patterns. Are there any easily identifiable repeating trends? 
