@@ -75,27 +75,31 @@ We can conclude that organic avocados are way more expensive than conventional a
 1. Greater demand for organic avocados as farming and access to organic agriculture grows worldwide. 
 2. Rising population
 
-### Regional patterns
+### Analyzing Regional patterns
 We have 7 different regions in our data, giving us a great insight as to how demand and price differs across regions of the US 
 ```
 c("West","SouthCentral", "Northeast", "Southeast", "Midsouth", "Plains", "GreatLakes")
 ```
 
-#### Visualizations 
-
 ![](images/regional_averageprice.jpeg)
 
 ![](images/regional_volume.jpeg)
 
-#### Summary
+#### Regional Summary
 - We can quickly observe that organic avocado supply and sales are dramatically lower than conventional sales, but price is only slightly higher.
 - West and South Central lead the way in volume for both conventional and organic avocados, while Plains and Mid-South are clearly at the bottom. This probably has to do with proximity to Mexico, and the specific regions in which avocados grow.
-- West and South Central overall have the lowest priced avocados, probably due to their increased supply on the west coast. Los Angeles shows the largest supply of both conventional and organic avocados. Contrary to this, San Francisco has the highest priced conventional and organic avocados, due to having a high cost of living.
-- Avocados are popular everywhere, but much more popular on the west coast. 
-
+- West and South Central overall have the lowest priced avocados, probably due to their increased supply on the west coast. 
 
 ![](images/regional_volume_boxplot.jpeg)
 ![](images/regional_price_boxplot.jpeg)
+
+#### City Summary
+- Los Angeles stands a lone at the of sales volume of both conventional and organic avocados. Los Angeles' neighbor, San Francisco, has the highest priced conventional and organic avocados, due to having one of the highest costs of living.
+- While San Francisco clearly has the most expensive avocados, Northeastern cities (Phildadelphia, Buffalo/Rochester, Syracuse, Hartford/Springfield, Albany, Baltimore/Washington etc.), tend to have very expensive conventional avocados, probably because of their distance from Mexican avocado supply.
+- Cities close to mexico (Los Angeles, Dallas/Ft Worth, Phoenix/Tucson, Houston) have extremely high volume of sales for conventional avocados, but not organic avocados.
+- Large, urban, western cities seem to have the most organic avocado consumption (Los Angeles, Seattle, Seattle, Denver, Chicago, San Francisco)
+-
+
 
 ### Analyzing Seasonal Patterns:
 In this section, I want to try and detect any reoccurring seasonality patterns. Are there any easily identifiable repeating trends? 
