@@ -144,4 +144,3 @@ We can observe several important results from our analysis of this dataset:
 
 **Downward trend in the long run:** Based on our ARIMA model, we expect avocados to rise in price for a couple years, and then move to a downward trend shortly after 2020.
 
-
